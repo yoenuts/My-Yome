@@ -14,8 +14,8 @@ public class MyPanel extends JPanel implements ActionListener{
 
     MyPanel(){
         this.setPreferredSize(new Dimension(500,500));
-        img = new ImageIcon("background.jpg").getImage();
-        ball = new ImageIcon("basketball.png").getImage();
+        img = new ImageIcon(getClass().getResource("background.jpg")).getImage();
+        ball = new ImageIcon(getClass().getResource("basketball.png")).getImage();
         timer = new Timer(100,null);
         timer.addActionListener(this);
         timer.start();
@@ -35,7 +35,7 @@ public class MyPanel extends JPanel implements ActionListener{
         g2D.drawImage(img, 0, 0, null);
 
         //label
-        g2D.setFont(new Font("Arial", Font.BOLD, 15));
+        g2D.setFont(new Font("Verdana", Font.BOLD, 15));
         g2D.drawString("Yippie Yoenuts Yome", 180, 30);
 
         //Draw a house
@@ -44,7 +44,9 @@ public class MyPanel extends JPanel implements ActionListener{
         
         g2D.setPaint(Color.PINK); 
         g2D.fillRect(150,290,170,170);
-        
+
+        g2D.setPaint(Color.BLUE); 
+        g2D.fillRect(170, 350, 70, 110);
         //the sun
         g2D.setPaint(Color.yellow); 
         g2D.fillOval(0, 0, 80, 80);
