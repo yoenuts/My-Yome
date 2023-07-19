@@ -1,10 +1,12 @@
 import java.awt.*;
+import java.awt.event.ActionListener;
+
 import javax.swing.*;
 
 public class MyFrame extends JFrame{
     MyPanel aPanel;
-
     MyFrame(){
+        createMenuBar();
         aPanel = new MyPanel();
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //this.setSize(500,500);
@@ -14,11 +16,26 @@ public class MyFrame extends JFrame{
         this.setVisible(true);
         this.setResizable(false);
     }
-    //this is explicitly invoked
-    /** 
-    public void paint(Graphics g){
-        Graphics2D g2D = (Graphics2D) g;
-        g2D.drawLine(0,0,500,500);
+
+    void createMenuBar(){
+        MenuBar menuBar = new MenuBar();
+
+        Menu pRoom = new Menu("Paint Room");
+        pRoom.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                try{
+                    
+                }
+                catch(Exception e){
+                    e.printStackTrace();
+                }
+            }
+        });
+        Menu exit = new Menu("Bye");
+        menuBar.add(pRoom);
+        menuBar.add(exit);
+
+        this.setMenuBar(menuBar);
     }
-    **/
 }
