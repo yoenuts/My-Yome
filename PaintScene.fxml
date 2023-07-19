@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.Icon?>
+<?import com.gluonhq.charm.glisten.control.ToggleButtonGroup?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PaintSceneController">
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Canvas height="364.0" layoutX="69.0" layoutY="56.0" width="363.0" />
+         </children>
+      </Pane>
+   </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Home" />
+          <Menu mnemonicParsing="false" text="Customize">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Color">
+                     <graphic>
+                        <ToggleButtonGroup selectionType="SINGLE">
+                            <toggles>
+                                <ToggleButton text="Pink">
+                                    <graphic>
+                                        <Icon content="FORMAT_ALIGN_LEFT" />
+                                    </graphic>
+                                </ToggleButton>
+                                <ToggleButton selected="true" text="Green">
+                                    <graphic>
+                                        <Icon content="FORMAT_ALIGN_CENTER" />
+                                    </graphic>
+                                </ToggleButton>
+                                <ToggleButton text="Blue">
+                                    <graphic>
+                                        <Icon content="FORMAT_ALIGN_RIGHT" />
+                                    </graphic>
+                                </ToggleButton>
+                            </toggles>
+                        </ToggleButtonGroup>
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" text="Background Color">
+                     <graphic>
+                        <ToggleButtonGroup selectionType="SINGLE">
+                            <toggles>
+                                <ToggleButton text="White">
+                                    <graphic>
+                                        <Icon content="FORMAT_ALIGN_LEFT" />
+                                    </graphic>
+                                </ToggleButton>
+                                <ToggleButton selected="true" text="Black">
+                                    <graphic>
+                                        <Icon content="FORMAT_ALIGN_CENTER" />
+                                    </graphic>
+                                </ToggleButton>
+                                <ToggleButton text="Grey">
+                                    <graphic>
+                                        <Icon content="FORMAT_ALIGN_RIGHT" />
+                                    </graphic>
+                                </ToggleButton>
+                            </toggles>
+                        </ToggleButtonGroup>
+                     </graphic>
+                  </MenuItem>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Undo">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Clear" />
+               </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>
