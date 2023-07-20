@@ -21,8 +21,9 @@ public class MyPanel extends JPanel implements ActionListener{
         timer.start();
         
     }
-
-    public void paint(Graphics g){
+    
+    @Override
+    protected void paintComponent(Graphics g){
         Graphics2D g2D = (Graphics2D) g;
         int[] xPoints = {150, 235, 320};
         int[] yPoints = {290, 170, 290};
