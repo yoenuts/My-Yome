@@ -15,7 +15,7 @@
             "type": "java",
             "name": "newBoxMain",
             "request": "launch",
-            "vmArgs": "--module-path \"C:/Users/le bratte/OneDrive/Desktop/erlein studies uwu/Computer Programming/javafx-sdk-20.0.1/lib\" --add-modules javafx.controls,javafx.fxml",
+            "vmArgs": "--module-path \"C:/Users/le bratte/OneDrive/Desktop/erlein studies uwu/Computer Programming/javafx-sdk-18.0.2/lib\" --add-modules javafx.controls,javafx.fxml,javafx.swing,javafx.graphics,javafx.base --add-exports javafx.base/com.sun.javafx.logging=ALL-UNNAMED",
             "mainClass": "newBoxMain",
             "projectName": "2D_afb9b93e"
         }

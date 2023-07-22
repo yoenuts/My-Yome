@@ -1,5 +1,4 @@
 import java.awt.*;
-import java.awt.event.ActionListener;
 
 import javax.swing.*;
 import javafx.embed.swing.JFXPanel;
@@ -31,43 +30,36 @@ public class MyFrame extends JFrame{
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e){
                 openFxmlFile("PaintScene.fxml");
-                
             }
         });
-        Menu exit = new Menu("Bye");
+        Menu mainMenu = new Menu("Main Menu");
+        MenuItem exit = new MenuItem("Bye!");
+        exit.addActionListener(e -> System.exit(0));
 
         eHoMenu.add(pRoom);
+        mainMenu.add(exit);
 
         menuBar.add(eHoMenu);
-        menuBar.add(exit);
+        menuBar.add(mainMenu);
 
         this.setMenuBar(menuBar);
+        
     }
 
     private void openFxmlFile(String filename) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(filename));
-            Pane root = fxmlLoader.load();
-
-            SwingNode swingNode = new SwingNode();
-            swingNode.setContent(new JPanel()); // Replace with your Swing component if needed
-            swingNode.setContent(new JFXPanel()); // Initialize JavaFX on the EDT
-
-            // Create a JavaFX scene and set the content with the SwingNode
-            Scene scene = new Scene(root);
-            root.getChildren().add(swingNode);
+            JFXPanel fxPanel = new JFXPanel(); // Initialize JavaFX on the EDT
+            Pane root = FXMLLoader.load(getClass().getResource(filename));
 
             aPanel.removeAll(); // Remove the existing components from the panel
             aPanel.setLayout(new BorderLayout());
-            aPanel.add(swingNode, BorderLayout.CENTER); // Add the SwingNode
+            aPanel.add(fxPanel, BorderLayout.CENTER); // Add the JFXPanel
             aPanel.revalidate();
+            
+            fxPanel.setScene(new Scene(root));
         } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
-}
 
-
-
-    
 }

@@ -57,9 +57,6 @@ public class PaintSceneController {
     private Menu customM;
 
     @FXML
-    private Menu homeM;
-
-    @FXML
     private MenuBar menuBar;
 
     @FXML
@@ -72,4 +69,3 @@ public class PaintSceneController {
     private ToggleButton whiteBC;
 
 }
-
